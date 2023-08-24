@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Home from "./pages/1.home/home.jsx";
 import Services from "./pages/3.services/services.jsx";
 import Admin from "./pages/admin/admin.jsx";
+import Admin2 from "./pages/admin/admin2.jsx";
 import IDForm from "./components/Forms/IdForm/IDForm.jsx";
 import Login from "./components/Auth 2/Login.jsx";
 import AuthPage from "./components/authForms/AuthComponent.jsx";
@@ -13,6 +14,14 @@ import DeathForm from "./components/Forms/DeathForm/DeathForm.jsx";
 import WedForm from "./components/Forms/WeddingForm/WedForm.jsx";
 import RRForm from "./components/Forms/ResidentRegForm/RRForm.jsx";
 import HashLoader from "react-spinners/HashLoader";
+import WitnessForm from "./components/Forms/WitnessForm/WitnessForm.jsx";
+import IDRenovation from "./components/Forms/IDRenovation/IDRenovation.jsx";
+import IDLost from "./components/Forms/IDLost/IDLost.jsx";
+import RejectForm from "./components/Forms/RejectForm/RejectForm.jsx";
+import UpdateChange from "./components/Forms/UpdateChange/UpdateChange.jsx";
+
+
+
 function App() {
   const [loading, setLoading] = useState(false);
 
@@ -35,6 +44,7 @@ function App() {
             <Route exact path="/" Component={Home} />
             <Route path="/services" Component={Services} />
             <Route path="/admin/*" Component={Admin} />
+            <Route path="/alladmin/*" Component={Admin2} />
             <Route path="/application/id" Component={IDForm} />
             <Route path="/application/birth" Component={BirthForm} />
             <Route path="/application/death" Component={DeathForm} />
@@ -42,6 +52,16 @@ function App() {
             <Route path="/application/resident" Component={RRForm} />
             <Route path="/users/login" Component={Login} />
             <Route path="/users/auth" Component={AuthPage} />
+            <Route path="/application/witness" Component={WitnessForm} />
+            <Route path="/application/renovation" Component={IDRenovation} />
+            <Route path="/application/lost" Component={IDLost} />
+            
+            <Route path="/application/reject" Component={RejectForm} />
+            <Route path="/application/updatechange" Component={UpdateChange} />
+
+            
+
+
           </Routes>
         </Router>
       )}

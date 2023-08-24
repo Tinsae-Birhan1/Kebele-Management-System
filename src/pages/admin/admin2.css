@@ -1,0 +1,93 @@
+.container {
+  position: relative;
+}
+
+.sidenav {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  margin-left: -60px;
+  margin-top: 25px;
+  background: #ffffff;;
+  padding-right: 30px;
+  transition: all 1s;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+
+  
+ 
+  
+ 
+}
+.sidenav-menu li a svg {
+  margin-left: 10px; /* Increased margin between icon and text */
+}
+
+
+.sidenav-menu {
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav-menu li {
+  list-style-type: none;
+}
+
+.sidenav-menu li a {
+  text-decoration: none;
+  color: #00a967;
+  font-size: 16px;
+  display: block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sidenav-menu li a:hover,
+.sidenav-menu li a:active {
+  background: #00a967;
+  color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  padding: 10px;
+  border-top: 1px solid #00a967;
+  margin-top: 340px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.profile p {
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    padding-right: 0;
+  }
+  
+  .sidenav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .sidenav-menu li a {
+    margin-bottom: 0;
+  }
+  
+  .profile {
+    border-top: none;
+  }
+}

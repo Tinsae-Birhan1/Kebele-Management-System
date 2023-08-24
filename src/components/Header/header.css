@@ -5,7 +5,238 @@
   margin-left: 33px;
   font-family: "Dancing Script";
 }
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.dropdown button {
+  position: relative;
+  z-index: 10;
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  color: #4a5568;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.dropdown button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #4a5568;
+}
+
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 16rem;
+  height: 50rem;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px 20px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  margin-left: -100px;
+  margin-top: 15px;
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Black with 70% transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.active-modal {
+  overflow-y: hidden;
+}
+
+.app-container.blur {
+  filter: blur(4px);
+  pointer-events: none;
+}
+.app-container.blur-background {
+  filter: blur(4px);
+}
+
+.see-all-container {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 8px;
+}
+
+.see-all {
+  color: #68768c;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin: -0.5rem;
+  transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.dropdown-menu a img {
+  flex-shrink: 0;
+  object-fit: cover;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.25rem;
+  border-radius: 9999px;
+}
+
+.dropdown-menu a p {
+  margin: 0 0.5rem;
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.dropdown-menu a .font-bold {
+  font-weight: 700;
+}
+
+.dropdown-menu a .text-blue-500:hover {
+  text-decoration: underline;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu .see-all {
+  display: block;
+  padding: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: #00a967;;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.accept-btn {
+  background-color: green;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background-color: red;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;}
+
+  .updateContainer {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    justify-content: center;
+  }
+  
+  .updateBox {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+  .updateBox a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    margin: -0.5rem;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    text-decoration: none;
+  }
+  
+  .updateBox a:hover {
+    background-color: #f7fafc;
+    border-color: #cbd5e0;
+  }
+  
+  .updateBox a img {
+    flex-shrink: 0;
+    object-fit: cover;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.25rem;
+    border-radius: 9999px;
+  }
+  
+.complian-dialog-img {
+  width: 40%;
+  margin-left: 30%;
+}
+  .updateBox a p {
+    margin: 0 0.5rem;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+  
+  .updateBox a .font-bold {
+    font-weight: 700;
+  }
+  
+  .updateBox a .text-blue-500:hover {
+    text-decoration: underline;
+  }
+  
+  .updateBox a:last-child {
+    border-bottom: none;
+  }
+  
 .nav {
   display: flex;
   align-items: center;
@@ -48,7 +279,7 @@ li a {
   border-radius: 10px;
   padding: 10px 20px;
   width: 350px;
-  height: 350px;
+  height: 500px;
 }
 
 .dropdown-menu ul li {

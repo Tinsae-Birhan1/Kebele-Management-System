@@ -5,6 +5,22 @@ import Dashboard from "./admin-screens/dashboard/admin_dashboard.jsx";
 import Settings from "./admin-screens/settings/admin_settings.jsx";
 import AnimatedPage from "../../components/AnimatedPage";
 import Pending from "./admin-screens/pending/Pending";
+import Staff from "./admin-screens/Staff/Staff";
+import Update from "./admin-screens/update/update";
+import Complaints from "./admin-screens/Complaint/Complaint";
+import AddStaffs from "./admin-screens/AddStaff/AddStaff";
+import ViewStaffs from "./admin-screens/ViewStaff/ViewStaff";
+import ViewPendingTablesBc from "./admin-screens/ViewPendingTableBC/ViewPendingTableBC";
+import ViewPendingTablesDc from "./admin-screens/ViewPendingTableDC/ViewPendingTableDC";
+import ViewPendingTablesLo from "./admin-screens/ViewPendingTableIDLo/ViewPendingTableIDLo";
+import ViewPendingTablesIDRenos from "./admin-screens/ViewPendingTableIDReno/ViewPendingTableIDReno";
+import ViewPendingTablecomp from "./admin-screens/ViewPendingTableComp/ViewPendingTableComp";
+import ViewPendingTableup from "./admin-screens/ViewPendingTableUpdate/ViewPendingTableUpdate";
+import ViewPendingTablerr from "./admin-screens/ViewPendingTableRR/viewRRpending";
+import ViewPendingTablewc from "./admin-screens/ViewPendingTableWC/ViewPendingTableWC";
+
+
+import ViewPendingTables from "./admin-screens/ViewPendingTable/ViewPendingTable";
 
 import { useState, useEffect } from "react";
 import PulseLoader from "react-spinners/PulseLoader";
@@ -44,6 +60,25 @@ export default function Admin() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="admin/staff">
+                    <FaClock className="icon" />
+                    Staff Managment
+                  </Link>
+                </li>
+                <li>
+                  <Link to="admin/updaterequest">
+                    <FaClock className="icon" />
+                   Update Request
+                  </Link>
+                </li>
+                
+                <li>
+                  <Link to="admin/complains">
+                    <FaClock className="icon" />
+                    complaints
+                  </Link>
+                </li>
+                <li>
                   <Link to="admin/settings">
                     <FaCog className="icon" />
                     Settings
@@ -59,6 +94,25 @@ export default function Admin() {
               <Route exact path="admin/dashboard" element={<Dashboard />} />
               <Route exact path="admin/settings" element={<Settings />} />
               <Route path="admin/pending" element={<Pending />} />
+              <Route path="admin/staff" element={<Staff />} />
+              <Route path="admin/updaterequest" element={<Update/>} />
+              
+              <Route path="admin/complains" element={<Complaints/>} />
+              <Route path="admin/addstaffs" element={<AddStaffs/>} />
+              
+              <Route path="admin/viewstaffs" element={<ViewStaffs/>} />
+              <Route path="admin/viewpendingtables" element={<ViewPendingTables/>} />
+              <Route path="admin/viewpendingtablesbc" element={<ViewPendingTablesBc/>} />
+              <Route path="admin/viewpendingtablesdc" element={<ViewPendingTablesDc/>} />
+              <Route path="admin/viewpendingtableslo" element={<ViewPendingTablesLo/>} />
+              <Route path="admin/viewpendingtablesidrenos" element={<ViewPendingTablesIDRenos/>} />
+              <Route path="admin/viewpendingtablecomps" element={<ViewPendingTablecomp/>} />
+              <Route path="admin/Viewpendingtableup" element={<ViewPendingTableup/>} />
+              <Route path="admin/Viewpendingtablerr" element={<ViewPendingTablerr/>} />
+              <Route path="admin/Viewpendingtablewc" element={<ViewPendingTablewc/>} />
+
+
+
             </Routes>
           </div>
         </AnimatedPage>

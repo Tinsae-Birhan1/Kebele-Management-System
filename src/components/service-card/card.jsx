@@ -4,6 +4,11 @@ import IdPic from "./card-images/id.png";
 import DthPic from "./card-images/death2.png";
 import WedPic from "./card-images/wedding.png";
 import Complain from "./card-images/complain.jpg";
+import upd from "./card-images/update.jpg";
+import IdLo from "./card-images/IdLost.png";
+import IDRen from "./card-images/IDRenovation.jpg";
+import expire from "./card-images/expire.jpg";
+
 import "./card.css";
 import AnimatedPage from "../AnimatedPage";
 import IDForm from "../Forms/IdForm/IDForm";
@@ -44,6 +49,42 @@ export default function ServieCard() {
   } else {
     document.body.classList.remove("active-modal");
   }
+
+  /////////////////////////////////////////////
+  const [showUpdate, setShowUpdate] = useState(false);
+  const openUpdate = () => {
+    setShowUpdate(true);
+  };
+
+  const closeUpdate = () => {
+    setShowUpdate(false);
+    setSubmitted(false);
+  };
+
+
+  if (showUpdate) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+  /////////////////////////////////////////////
+  const [showNotexpier, setShowNotexpier] = useState(false);
+  const openNotexpier = () => {
+    setShowNotexpier(true);
+  };
+
+  const closeNotexpier = () => {
+    setShowNotexpier(false);
+    setSubmitted(false);
+  };
+
+
+  if (showNotexpier) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+  
   return (
     <AnimatedPage>
       <div>
@@ -83,11 +124,113 @@ export default function ServieCard() {
           <Link to="/application/wedding">
             <div className="card">
               <div className="card--items">
-                <img className="card--imgs" src={WedPic} alt="" />
+                <img className="card--imgs" src={WedPic} alt=""  />
                 <h5 className="card--title">Apply for Wedding Certificate</h5>
               </div>
             </div>
           </Link>
+          {/* <Link to="/application/renovation"> */}
+          <Link >
+            <div className="card" onClick={openNotexpier}>
+              <div className="card--items">
+                <img className="card--imgs" src={IDRen} alt="" style={{ height: "135px" }}/>
+                <h5 className="card--title">Apply for ID Renovation</h5>
+              </div>
+            </div>
+          </Link>
+          {showNotexpier && (
+            <div className="back">
+            <div className="dialog" style={{
+             width: "5000px"
+            }}>
+              <img
+                    className="complian-dialog-img"
+                    src={expire}
+                    alt=""
+                  />
+                  <h2 >Your ID is still valid and has not yet expired.</h2>
+                  <p className="success-message">
+                    It will expier in on x.
+                  </p>
+                  <div className="btns-1">
+                    <button onClick={closeNotexpier}>Close</button>
+                  </div>
+              
+
+            </div>
+            </div>
+          )}
+          <Link to="/application/lost">
+            <div className="card">
+              <div className="card--items">
+                <img className="card--imgs" src={IdLo} alt="" />
+                <h5 className="card--title">Apply for ID Lost</h5>
+              </div>
+            </div>
+          </Link>
+          <Link to="/application/updatechange">
+          {/* <Link> */}
+            {/* <div className="card" onClick={openUpdate}> */}
+            <div className="card" >
+
+              <div className="card--items">
+                <img className="card--imgs" src={upd} alt="" />
+                <h5 className="card--title">Update and Change Request</h5>
+              </div>
+            </div>
+          </Link>
+          {showUpdate && (
+            <div className="back">
+            <div className="dialog" style={{
+             width: "5000px"
+            }}>
+              {submitted ? (
+                <>
+                  <img
+                    className="complian-dialog-img"
+                    src={SuccessImage}
+                    alt=""
+                  />
+                  <h2 className="success-header">Submission Successful</h2>
+                  <p className="success-message">
+                    Thank you for your submission! We have received your
+                    feedback.
+                  </p>
+                  <div className="btns-1">
+                    <button onClick={closeUpdate}>Close</button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <img className="complian-dialog-img" src={Complain} alt="" />
+                  <h2 className="complain-header">Submitt Your Update or Change Request</h2>
+                  
+                  <input
+                    type="text"
+                    placeholder="Type here..."
+                    className="complain-text-area"
+                  />
+                  <div className="btns-1">
+                    <button onClick={handleComplainSubmission}>
+                      {loading ? (
+                        <SyncLoader
+                          color="#f1f1f1"
+                          loading={loading}
+                          size={10}
+                        />
+                      ) : (
+                        "Submit"
+                      )}
+                    </button>
+                  </div>
+                </>
+              )}
+              
+
+            </div>
+            </div>
+          )}
+          
           <Link>
             <div className="card" onClick={openDialog}>
               <div className="card--items">
@@ -96,7 +239,9 @@ export default function ServieCard() {
               </div>
             </div>
           </Link>
+          
           {showDialog && (
+            <div className="back">
             <div className="dialog">
               {submitted ? (
                 <>
@@ -145,6 +290,7 @@ export default function ServieCard() {
                   </div>
                 </>
               )}
+            </div>
             </div>
           )}
         </div>
